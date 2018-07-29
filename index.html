@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="example">
+      <p>Example 1</p>
+      <p>{{ text }}</p>
+    </div>
+
+    <div class="example">
+      <p>Example 2</p>
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound title!
+      </span>
+    </div>
+
+    <div class="example">
+      <p>Example 3</p>
+      <span v-if="seen">Now you see me</span>
+    </div>
+
+    <div class="example">
+      <p>Example 4</p>
+      <ol>
+        <li v-for="car in cars">
+          {{ car.brand }} - {{ car.model }}
+        </li>
+      </ol>
+    </div>
+
+    <div class="example">
+      <p>Example 5</p>
+      <p>{{ reverseText }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+    <div v-bind:class="{ example: isActive }">
+      <p>Example 6</p>
+      <p>{{ inputText }}</p>
+      <input v-model="inputText">
+    </div>
+
+    <div v-bind:class="classObject">
+      <p>Example 7</p>
+      <ol>
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id">
+        </todo-item>
+      </ol>
+    </div>
+  </div>
+
+  <script src="./main.js" type="module"></script>
+</body>
+
+</html>
